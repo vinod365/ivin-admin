@@ -12,21 +12,26 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/x-data-grid": "^8.5.2",
-    "@svgr/webpack": "^8.1.0",
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.10.0",
     "firebase": "^11.9.1",
     "next": "15.3.3",
     "next-auth": "^5.0.0-beta.20",
     "next-runtime-env": "^3.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2"
+    "react-hot-toast": "^2.5.2",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/webpack": "^5.28.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "^5.99.9"
   }
 }

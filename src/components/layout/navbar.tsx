@@ -2,13 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navbarItems = [
-  { name: "Home", href: "/" },
-  { name: "Features", href: "/features" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
-  {name:  "Community" , href:"/community"},
-  { name: "About Us", href: "/about-us" },
-  { name: "Admin Login", href: "/admin-login" },
+ 
+  { name: "Admin Login", href: "/" },
 ];
 
 export default function Navbar() {
@@ -21,7 +16,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`${item.href === "/admin-login" && "underline ml-auto"}`}
+              className={`${item.href === "/" && "underline ml-auto"}`}
             >
               {item.name}
             </Link>

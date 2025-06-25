@@ -1,19 +1,18 @@
 "use client";
 
 import { GoogleResponse } from "@/authentication/get-google-response";
-import LeftArrow from "@/components/login/assets/left-arrow.svg";
-import Success from "@/components/login/assets/success.png";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import successIcon from "./assets/success.png";
+import leftArrowIcon from "./assets/left-arrow.svg";
 
 export default function ForgetPassword() {
   const { sendForgotPasswordEmail } = GoogleResponse();
 
   const router = useRouter();
 
-  const [isResetEmailSent, setIsResetEmailSent] = useState<boolean>(false);
+  const [isResetEmailSent, setIsResetEmailSent] = useState<boolean>(true);
   const [loadingEmail, setLoadingEmail] = useState(false);
   const [email, setEmail] = useState<string>();
 
@@ -38,7 +37,11 @@ export default function ForgetPassword() {
     <div className="w-full h-full flex justify-center items-center bg-[linear-gradient(180deg,_#D8ACFF_0%,_#ECD7FF_48.08%,_#D8ACFF_100%)]">
       <div className="px-6 py-10 rounded-[16px] w-full h-full max-w-140 max-h-120 bg-white flex flex-col justify-between">
         <div className="w-full flex flex-col justify-center items-center">
-          <img className="mb-5" src={"ivin-logo-login.svg"} />
+          <img 
+            src="/ivin-logo-login.svg" 
+            alt="ivin logo" 
+            className="mb-5 w-[200px] h-[50px]"
+          />
           <p className="font-fredoka font-medium text-[24px]">
             Forgot your password?
           </p>
@@ -73,26 +76,33 @@ export default function ForgetPassword() {
         ) : (
           <>
             <div className="flex justify-center">
-              <Image width={96} alt="success" className="" src={Success} />
+              <img 
+                src={successIcon.src}
+                alt="success" 
+                className="w-[96px] h-[96px]"
+              />
             </div>
             <p className="font-fredoka font-medium text-center text-[16px] text-[#4D4D4D]">
-              If your account is registered, we’ve sent a password reset email.
+              If your account is registered, we've sent a password reset email.
               Please check your inbox for further instructions. Make sure to check you spam folder.
             </p>
           </>
         )}
 
         <div
-          onClick={() => router.push("/dealer-login")}
+          onClick={() => router.push("/")}
           className="w-full flex items-center gap-4 justify-center cursor-pointer"
         >
-          <LeftArrow />
+          <img 
+            src={leftArrowIcon.src}
+            alt="back arrow" 
+            className="w-[24px] h-[24px]"
+          />
           <p className="font-fredoka text-center text-primary text-[18px] font-semibold">
             Back to Login
           </p>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }

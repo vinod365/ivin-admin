@@ -10,15 +10,12 @@ import { authenticate } from "@/authentication/authenticate.action";
 export default function Login() {
   const router = useRouter();
   const {
-    getSignInWithPopup,
     getSignInUsingEmailPassword,
-    sendForgotPasswordEmail,
   } = GoogleResponse();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loadingEmail, setLoadingEmail] = useState(false);
-  const [loadingGoogle, setLoadingGoogle] = useState(false);
 
   const onLogin = async (googleResponse: any) => {
     await authenticate({
@@ -28,18 +25,7 @@ export default function Login() {
     router.push("/dashboard");
   };
 
-  const onGoogleLogin = async () => {
-    setLoadingGoogle(true);
-    try {
-      const googleResponse = await getSignInWithPopup();
-      await onLogin(googleResponse);
-      toast.success("Signed in with Google");
-    } catch (err: any) {
-      toast.error("Google sign-in failed");
-    } finally {
-      setLoadingGoogle(false);
-    }
-  };
+
 
   const onEmailLogin = async () => {
     if (!email || !password) {

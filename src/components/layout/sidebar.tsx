@@ -89,7 +89,7 @@ function SidebarItem({
     >
       <Icon fill={color} width={24} height={24} />
       <p
-        className={`hidden lg:block font-medium text-base font-[Poppins] leading-normal `}
+        className={`sm:hidden lg:block font-medium text-base font-[Poppins] leading-normal `}
         style={{ color }}
       >
         {title}

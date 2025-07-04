@@ -1,0 +1,17 @@
+[debug] [2025-07-04T19:11:42.205Z] ----------------------------------------------------------------------
+[debug] [2025-07-04T19:11:42.208Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vinod\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-07-04T19:11:42.209Z] CLI Version:   14.6.0
+[debug] [2025-07-04T19:11:42.209Z] Platform:      win32
+[debug] [2025-07-04T19:11:42.209Z] Node Version:  v22.12.0
+[debug] [2025-07-04T19:11:42.209Z] Time:          Sat Jul 05 2025 00:41:42 GMT+0530 (India Standard Time)
+[debug] [2025-07-04T19:11:42.210Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-04T19:11:42.212Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-07-04T19:11:42.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-04T19:11:42.517Z] > authorizing via signed-in user (vinodtanwar495@gmail.com)
+[debug] [2025-07-04T19:11:42.518Z] [iam] checking project ivin-platform for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-04T19:11:42.518Z] Checked if tokens are valid: false, expires at: 1751484378827
+[debug] [2025-07-04T19:11:42.519Z] Checked if tokens are valid: false, expires at: 1751484378827
+[debug] [2025-07-04T19:11:42.519Z] > refreshing access token with scopes: []
+[debug] [2025-07-04T19:11:42.520Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-04T19:11:42.520Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]

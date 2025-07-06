@@ -8,9 +8,10 @@ import { DataGrid as MuiDataGrid, GridColDef, GridRowsProp } from "@mui/x-data-g
 interface DataGridProps {
   columns: GridColDef[];
   rows: GridRowsProp;
+  rowHeight?: number;
 }
 
-export default function DataGrid({ columns, rows }: DataGridProps) {
+export default function DataGrid({ columns, rows , rowHeight=56 }: DataGridProps) {
   return (
     <div className="flex-1">
       <MuiDataGrid
@@ -40,6 +41,7 @@ export default function DataGrid({ columns, rows }: DataGridProps) {
           },
         }}
         pageSizeOptions={[5]}
+        rowHeight={rowHeight}
         disableRowSelectionOnClick
         disableColumnSorting
         disableColumnSelector

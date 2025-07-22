@@ -1,6 +1,10 @@
 import UserManagement from "@/components/user-management";
+interface DealersPageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ query: string }>;
+}
 
-export default function page() {
-    return <UserManagement/>;
-  }
-  
+export default async function page({ searchParams }: DealersPageProps) {
+  const params = await searchParams;
+  return <UserManagement searchParams={params}/>;
+}

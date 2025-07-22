@@ -1,17 +1,26 @@
 "use client";
 
-import * as React from "react";
-import { DataGrid as MuiDataGrid, GridColDef, GridRowsProp } from "@mui/x-data-grid";
-
-
+import {
+  GridColDef,
+  GridRowsProp,
+  DataGrid as MuiDataGrid,
+} from "@mui/x-data-grid";
 
 interface DataGridProps {
   columns: GridColDef[];
   rows: GridRowsProp;
   rowHeight?: number;
+  pageSize?: number;
+  page?: number;
 }
 
-export default function DataGrid({ columns, rows , rowHeight=56 }: DataGridProps) {
+export default function DataGrid({
+  columns,
+  rows,
+  rowHeight = 56,
+  pageSize,
+  page,
+}: DataGridProps) {
   return (
     <div className="flex-1">
       <MuiDataGrid
@@ -20,7 +29,8 @@ export default function DataGrid({ columns, rows , rowHeight=56 }: DataGridProps
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: pageSize,
+              page,
             },
           },
         }}

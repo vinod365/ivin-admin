@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: "standalone",
   webpack(config: any) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -22,14 +21,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingExcludes: {
-    "**": [
-       './node_modules/@vercel/og/**',
-        './node_modules/satori/**',
-        './node_modules/next/dist/compiled/@vercel/og/**',
-        './node_modules/next/dist/compiled/satori/**',
-    ],
-  },
+  // output: "standalone",
+  // outputFileTracingExcludes: {
+  //   "**": [
+  //      './node_modules/@vercel/og/**',
+  //       './node_modules/satori/**',
+  //       './node_modules/next/dist/compiled/@vercel/og/**',
+  //       './node_modules/next/dist/compiled/satori/**',
+  //   ],
+  // },
 };
 
 export default nextConfig;

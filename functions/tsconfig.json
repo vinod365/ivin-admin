@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",      
+    "esModuleInterop": true,
+    "moduleResolution": "node", 
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022", 
+    "lib": ["es2022", "DOM", "DOM.Iterable"]
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "node_modules/next/dist/compiled/@vercel/og",
+    "node_modules/next/dist/compiled/satori"
+  ]
+}

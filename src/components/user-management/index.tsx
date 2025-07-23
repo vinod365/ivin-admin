@@ -1,7 +1,4 @@
-
-import {
-  createSupabaseAdminClient,
-} from "@/lib/supabase/server";
+import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import DealerList from "./dealer-list";
 import Search from "./search";
 
@@ -21,6 +18,7 @@ export default async function UserManagement({
 
   const page = parseInt(searchParams?.page as string) || 0; 
   const pageSize = parseInt(searchParams?.pageSize as string) || 10;
+  
 
   // Supabase query 
   const from = page * pageSize;
@@ -34,8 +32,7 @@ export default async function UserManagement({
 
   if (searchQuery) {
     query = query
-      .ilike("full_name", `%${searchQuery}%`)
-      .or(`username.ilike.%${searchQuery}%, email.ilike.%${searchQuery}%`);
+      .or(`full_name.ilike.%${searchQuery}%, username.ilike.%${searchQuery}%, email.ilike.%${searchQuery}%`);
   }
 
   query = query.range(from, to);
